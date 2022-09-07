@@ -3,23 +3,37 @@ import TaskInput from "../../components/TaskInput/";
 import TaskList from "../../components/TaskList/";
 import "./style.css";
 
+/*  Requisitos {
+
+  1 - Alterar o estilo de uma task quando concluída;
+  2 - Remover espaços em brancos dos nomes;
+  3 - Não permitir tasks duplicadas;
+  4 - Permitir adição de task ao pressionar a tecla enter;
+
+  Challanges {
+    1 - Adicionar a opção de editar uma task;
+    2 - Salvar os dados em localstorage;
+  }
+
+} */
+
 export default function HomePage() {
 
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
 
   const addTask = () => {
-    const getAnId = taskList.length;
+    const idGenerator = taskList.length;
     if (task.length > 0) {
       setTaskList([...taskList, {
-        id: getAnId,
+        id: idGenerator,
         name: task,
         done: false
       }]);
       setTask("");
     }
     else {
-      alert("O nome da tarefa deve conter ao menos um caracter.")
+      alert("O nome da tarefa deve conter ao menos um caracter.");
     }
   }
 
