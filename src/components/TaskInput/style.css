@@ -8,17 +8,19 @@
 }
 
 .input-task input {
-  color: #959595;
+  width: 100%;
   font-size: 1em;
   padding: .5em 1em;
   border: 0;
   border-radius: .5em;
+  color: #959595;
   background-color: #151432;
   flex: 1;
   outline: 0;
 }
 
 .input-task button {
+  width: 50px;
   font-size: .900em;
   font-weight: 600;
   margin-left: .450em;

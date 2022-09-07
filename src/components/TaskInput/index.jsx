@@ -9,7 +9,7 @@ export default function TaskInput (props){
         onChange={ props.setTaskName }
         placeholder="Adicione uma tarefa"
       />
-      <button type="button" onClick={props.addTask}>Adicionar Tarefa</button>
+      <button type="button" onClick={props.addTask}>+</button>
     </div>
   );
 }
