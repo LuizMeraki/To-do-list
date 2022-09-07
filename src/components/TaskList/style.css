@@ -1,0 +1,25 @@
+.task-box {
+  width: 100%;
+  margin-bottom: .550em;
+  padding: .7em;
+  border-radius: .9em;
+  color: #959595;
+  background-color: #151432;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-options button {
+  font-size: .900em;
+  color: #fff;
+  border: none;
+  padding: .350em 1em;
+  border-radius: 1em;
+  background-color: #962c2c;
+  transition: .150s;
+}
+
+.item-options button:hover {
+  background-color: #611d1d;
+}

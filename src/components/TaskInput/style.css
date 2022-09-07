@@ -1,0 +1,35 @@
+.input-task {
+  width: 100%;
+  padding-bottom: 1.5em;
+  margin-bottom: 1em;
+  border-bottom: .1em solid #555555;
+  display: flex;
+  align-items: center;
+}
+
+.input-task input {
+  color: #959595;
+  font-size: 1em;
+  padding: .5em 1em;
+  border: 0;
+  border-radius: .5em;
+  background-color: #151432;
+  flex: 1;
+  outline: 0;
+}
+
+.input-task button {
+  font-size: .900em;
+  font-weight: 600;
+  margin-left: .450em;
+  padding: .5em .8em;
+  border: none;
+  border-radius: .5em;
+  color: #fff;
+  background-color: #3e9c58;
+  transition: .130s;
+}
+
+.input-task button:hover {
+  background-color: #2e6b3f;
+}

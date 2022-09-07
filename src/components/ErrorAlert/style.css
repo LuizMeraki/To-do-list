@@ -1,0 +1,26 @@
+.alert-box {
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  background-color: #b81c1c;
+  border-left: .4em solid #751111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  animation: slide 2s ease;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-200px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}
