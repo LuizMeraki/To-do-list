@@ -8,15 +8,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  animation: fade .5s ease-in-out;
 }
 
 .task-name-box input {
   width: 1.2em;
   height: 1.2em;
-  margin-right: 1.2em;
 }
 
 .task-name-box label {
+  width: 100%;
+  margin: 0 1em;
+  word-break: break-all;
   transition: .8s;
 }
 

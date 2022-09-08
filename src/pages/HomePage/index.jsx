@@ -3,21 +3,7 @@ import TaskInput from "../../components/TaskInput/";
 import TaskList from "../../components/TaskList/";
 import "./style.css";
 
-/*  Requisitos {
-
-  1 - OK - Alterar o estilo de uma task quando concluída;
-  2 - OK - Não permitir tasks duplicadas;
-  3 - Permitir adição de task ao pressionar a tecla enter;
-
-  Challanges {
-    1 - Adicionar a opção de editar uma task;
-    2 - Salvar os dados em localstorage;
-  }
-
-} */
-
 export default function HomePage() {
-
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
 
@@ -73,6 +59,7 @@ export default function HomePage() {
         <TaskInput
           taskName={task}
           setTaskName={(e) => setTask(e.target.value)}
+          addTaskPressingEnter={(e) => e.key === "Enter" && addTask()}
           addTask={addTask}
         />
         {taskList.map((item) => (

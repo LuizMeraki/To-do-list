@@ -1,6 +1,7 @@
 main {
   width: 100%;
   min-height: 100vh;
+  padding: 3.5em 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,9 +25,21 @@ main {
   background-color: #1c1a3f;
   padding: 1em;
   border-radius: .8em;
-  box-shadow: 0 .5em .5em .4em #00000057;
+  box-shadow: 0 .5em .5em .4em #0000003b;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fade 2.3s;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
