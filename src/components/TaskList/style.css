@@ -16,9 +16,13 @@
   margin-right: 1.2em;
 }
 
+.task-name-box label {
+  transition: .8s;
+}
+
 .task-checked {
-  color: #3e9c58;
   font-style: italic;
+  color: #3e9c5979;
   text-decoration: line-through;
 }
 
