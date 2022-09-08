@@ -5,10 +5,9 @@ import "./style.css";
 
 /*  Requisitos {
 
-  1 - Alterar o estilo de uma task quando concluída;
-  2 - Remover espaços em brancos dos nomes;
-  3 - Não permitir tasks duplicadas;
-  4 - Permitir adição de task ao pressionar a tecla enter;
+  1 - OK - Alterar o estilo de uma task quando concluída;
+  2 - OK - Não permitir tasks duplicadas;
+  3 - Permitir adição de task ao pressionar a tecla enter;
 
   Challanges {
     1 - Adicionar a opção de editar uma task;
@@ -22,9 +21,26 @@ export default function HomePage() {
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
 
+  const checkTaskExistence = () => {
+    for (const taskItem of taskList) {
+      if (taskItem.name === task) {
+        return true
+      }
+    }
+  }
+
   const addTask = () => {
+    const taskExists = checkTaskExistence();
+    const checkTaskSize = task.length > 0;
     const idGenerator = taskList.length;
-    if (task.length > 0) {
+
+    if (taskExists) {
+      alert(`A tarefa "${task}" já existe.`)
+    }
+    else if (!checkTaskSize) {
+      alert("O nome da tarefa deve conter ao menos um caracter.");
+    }
+    else {
       setTaskList([...taskList, {
         id: idGenerator,
         name: task,
@@ -32,16 +48,20 @@ export default function HomePage() {
       }]);
       setTask("");
     }
-    else {
-      alert("O nome da tarefa deve conter ao menos um caracter.");
-    }
   }
 
   const removeTask = (taskId) => {
-    const newList = taskList.filter((task) => (
+    const filteredList = taskList.filter((task) => (
       task.id != taskId
     ));
-    setTaskList(newList)
+    setTaskList(filteredList)
+  }
+
+  const toggleTaskCheck = (id, done) => {
+    const index = taskList.findIndex(item => item.id === id);
+    const newList = taskList;
+    newList[index].done = !done;
+    setTaskList([...newList]);
   }
 
   return (
@@ -58,6 +78,8 @@ export default function HomePage() {
         {taskList.map((item) => (
           <TaskList
             key={item.id}
+            toggleTaskCheck={() => toggleTaskCheck(item.id, item.done)}
+            isTaskChecked={item.done}
             taskName={item.name}
             removeTask={() => removeTask(item.id)}
           />
