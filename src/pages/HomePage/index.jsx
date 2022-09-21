@@ -1,6 +1,10 @@
 import { useState } from "react";
+
+// Components
 import TaskInput from "../../components/TaskInput/";
 import TaskList from "../../components/TaskList/";
+
+// CSS
 import "./style.css";
 
 export default function HomePage() {
@@ -27,20 +31,22 @@ export default function HomePage() {
       alert("O nome da tarefa deve conter ao menos um caracter.");
     }
     else {
-      setTaskList([...taskList, {
+      const newList = [...taskList, {
         id: idGenerator,
         name: task,
         done: false
-      }]);
+      }];
+
+      setTaskList([...newList]);
       setTask("");
     }
   }
 
   const removeTask = (taskId) => {
     const filteredList = taskList.filter((task) => (
-      task.id != taskId
+      task.id !== taskId
     ));
-    setTaskList(filteredList)
+    setTaskList([...filteredList]);
   }
 
   const toggleTaskCheck = (id, done) => {
