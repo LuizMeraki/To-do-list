@@ -34,6 +34,7 @@ Link: <a href="https://to-do-list-luizmeraki.vercel.app/" target="blank">To do l
 <ul>
   <li>JavaScript</li>
   <li>React</li>
+  <li>JSX</li>
   <li>CSS</li>
 </ul>
 
